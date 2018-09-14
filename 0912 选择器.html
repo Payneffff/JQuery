@@ -6,11 +6,19 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>选择器</title>
     <script src="jquery-1.11.0.min.js"></script>
+    <style>
+        div,
+        p {
+            margin: 30px;
+        }
+    </style>
     <script>
+        //配置JQuery环境
         $(document).ready(function(){  //$代表jquery对象
+    //基本选择权器
             //id选择器
             $("#one").css("background","#f00")//css()方法，第一个值为属性名，第二个值为属性值
-            
+
             //类选择器 $("class") 得到元素集合
             $(".aa").css("background","#f00")//隐式迭代,只在设置时生效
             
@@ -23,6 +31,10 @@
             //集合选择器
             $(".aa,p,h1").css("color","#fff");
 
+            //全局选择器
+            $("*").css("border","1px solid #08f")
+            
+    //关系选择器
             // 后代选择器
             $("div p").css("background","#f0f");
 
