@@ -24,7 +24,7 @@
             // 属性过滤器
             $("li[class]").css("color","#f80");
             $("li[class=cc2]").css("background","#08f");
-            $("li[class!=cc]").css("text-decoration","underline");//class不为cc的元素被选，包括 无class属性的元素
+            $("li[class!=cc]").css("text-decoration","underline").css("border","1px solid #f80");//class不为cc的元素被选，包括 无class属性的元素
             $("li[class^=a]").css("text-decoration","overline");
             $("li[class$=b]").css("font-style","italic");
             $("li[class*=b]").css("background","#0cf");
