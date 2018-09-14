@@ -6,8 +6,60 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>过滤选择器</title>
     <script src="jquery-1.11.0.min.js"></script>
+    <link rel="stylesheet" href="../JS/reset.css">
+    <style>
+        li {
+            margin: 20px;
+            line-height: 30px;
+            text-align: center;
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+            // 基本过滤选择器(下标从0开始计数)
+
+            //:first
+            $("li:first").css("background","#8f0");//选取第一个元素
+
+            //:last
+            $("li:last").css("background","#f80");//选取最后一个元素
+
+            // :not(selector)
+            $("li:not(.notThis)").css("border","1px solid #000");//不选取class='notThis'的元素
+
+            //:even偶数   :odd奇数
+            $("li:even").css("background","#0f8");//偶数索引值行变为绿色
+            $("li:odd").css("color","#08f");//奇数索引值行字体颜色变为蓝色
+
+            //:eq(index)
+            $("li:eq(6)").css("font-weight","700");//索引值为6的元素 字体加粗
+
+            //:gt(index)索引值大于index的元素，index从0开始;不包含当前索引值
+            //:lt(index)索引值小于index的元素，index从0开始
+            $("li:gt(8)").css("font-style","italic");
+            $("li:lt(3)").css("text-decoration","underline");
+
+            //:header  选取所有标题元素，如 h1 h2 h3
+            $(".cc:header").css("text-decoration","overline")//class值为cc的元素，选取标题元素
+
+            //:animated 选取当前正在实行动画的所有元素
+            $("li:animated")
+        })
+    </script>
 </head>
 <body>
-    
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li class="cc">4</li>
+        <li class="notThis cc">5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+        <li>9</li>
+        <li>10</li>
+    </ul>
+    <h1 class="cc">标题</h1>
 </body>
 </html>

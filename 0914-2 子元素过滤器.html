@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>过滤选择器</title>
+    <script src="jquery-1.11.0.min.js"></script>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        li {
+            margin: 20px;
+            line-height: 30px;
+            text-align: center;
+        }
+        p {
+            text-align: center;
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+            // 子元素过滤器(从1开始计数)
+
+            // :nth-child(index/even/odd/equation)选取每个元素下的第index个子元素或奇偶元素（index从1算）
+            $("li:nth-child(1)").css("background","#0f8")//每个ul里 第一个li背景颜色变色
+            $(".cc:nth-child(1)").css("color","#f80");//p和6变色
+            
+            // :first-child
+            // :last-child
+            // :only-child 如果某个元素是它父元素中唯一的子元素，那么将会被匹配。如果父元素中还有其他元素，则不匹配。
+            $("ul li:only-child").css("background","#8d0");//在ul中选取是唯一子元素的li元素
+        })
+    </script>
+</head>
+<body>
+    <p class="cc">这是p</p>
+    <ul class="one">
+        <li>1</li>
+        <li class="cc">2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    <ul class="two">
+        <li class="cc">6</li>
+        <li>7</li>
+        <li>8</li>
+        <li>9</li>
+        <li>10</li>
+    </ul>
+    <h1 class="cc">标题</h1>
+    <ul>
+        <li>only</li>
+    </ul>
+</body>
+</html>

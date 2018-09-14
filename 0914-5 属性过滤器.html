@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>过滤选择器</title>
+    <script src="jquery-1.11.0.min.js"></script>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        li {
+            margin: 20px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            font-size: 18px;
+        }
+        p {
+            text-align: center;
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+            // 属性过滤器
+            $("li[class]").css("color","#f80");
+            $("li[class=cc2]").css("background","#08f");
+            $("li[class!=cc]").css("text-decoration","underline");//class不为cc的元素被选，包括 无class属性的元素
+            $("li[class^=a]").css("text-decoration","overline");
+            $("li[class$=b]").css("font-style","italic");
+            $("li[class*=b]").css("background","#0cf");
+            $("li[class~=x]").css("font-weight","900");//无元素选取
+            $("li[class~=xx]").css("font-weight","900");
+        })
+    </script>
+</head>
+<body>
+    <pre>
+            [attribute]  选取拥有此属性的元素
+
+            [attribute=value] 选取属性的值为value
+
+            [attribute!=value] 选取属性的值不等于value的元素
+
+            [attribute^=value] 选取属性的值为value开始的元素
+
+            [attribute$=value] 选取属性值以value结尾的元素
+
+            [attribute*=value] 选取属性值含有value的元素
+
+            [attribute~=value] 选取多个属性值中包含value值的元素
+    </pre>
+    <ul class="one">
+        <li>1</li>
+        <li class="cc">2</li>
+        <li class="cc2">3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    <ul class="two">
+        <li class="cbc">6</li>
+        <li class="cc xx"><span>7</span></li>
+        <li class="ccb">8</li>
+        <li class="ac xx">9</li>
+        <li class="ac">10</li>
+    </ul>
+
+</body>
+</html>
