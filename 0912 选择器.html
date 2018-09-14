@@ -4,25 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>选择器</title>
     <script src="jquery-1.11.0.min.js"></script>
     <script>
         $(document).ready(function(){  //$代表jquery对象
             //id选择器
             $("#one").css("background","#f00")//css()方法，第一个值为属性名，第二个值为属性值
+            
             //类选择器 $("class") 得到元素集合
             $(".aa").css("background","#f00")//隐式迭代,只在设置时生效
+            
             console.log($(".aa").html())//隐式迭代,只能获取第一个值
             console.log($(".aa").text())//能获得两个文本
+
             //标记选择器
             $("div").css("color","#ff0")//隐式迭代,只在设置时生效
+
             //集合选择器
             $(".aa,p,h1").css("color","#fff");
+
+            // 后代选择器
             $("div p").css("background","#f0f");
-            // 子备选择器
+
+            // 子辈选择器
             $("选择器1>选择器2")
+
             //相邻下一个兄弟选择器
             $("选择器1+选择器2")
+
             //所有兄弟选择器
             $("选择器1~选择器2")
         });
