@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>过滤选择器</title>
+    <script src="jquery-1.11.0.min.js"></script>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        p,
+        h1,
+        h2 {
+            margin-top: 10px;
+            text-align: center;
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+            //更改为部分元素集合
+
+            //eq
+            $("p").eq(0).html("我是改过的p");
+            for(var i=0;i<3;i++){
+                $("p").eq(i).html("我是后来改过的P").css("color","#f80");
+            }
+
+            //filter("选择器")   
+            $("p").filter(".one").css("background","skyblue");//从所有p标记中，选取class=one的元素
+            $("p").has("span").css("background","pink").css("border","1px solid #08f");//从所有p标记中，选取拥有子元素span的元素
+        })
+    </script>
+</head>
+<body>
+    <pre>
+            第三章 更改JQuery对象
+
+            1.更改对象操作
+            jq所做的事情就是生成jq对象，操作jq对象，像js一样，如果对象之间存在某种关系我们就可以通过这种关联来改变对象，例如 通过父元素找到子元素
+            2.链式操作设定
+            生成一个jq对象后,既要对它进行一次或多次的普通操作,同时还要对它进行更改操作,于是有必要把生成的jq对象存储在一个变量里,满足多次调用的需要.
+            如果按照这种方式，每进行一次对象生成或更改操作，都需要引入一个变量存储新的jq对象，使高效的程序变得不够简洁，于是jq引入了链式操作，执行普通操作后，会返回对象本身，于是可以持续地对该对象执行下一个操作，直到改变jq对象时，执行一个更改操作。
+        
+    </pre>
+    <pre>
+                更改为部分元素集合
+                1> eq() first() last()
+                eq(index) 选择元素中索引值等于index的元素，正向0开始，逆向-1开始
+                first() 选择匹配元素中第一个，等于eq(0)
+                last() 选择匹配元素中最后一个，等于eq(-1)
+                2> slice()
+                slice(start,[end]) 筛选索引从 start 到 end-1 的元素(不包含结束位置的元素)
+                3> filter() not()
+                filter("选择器") 在原先元素中选择匹配选择器的元素
+                not("选择器") 在原先元素中选择不匹配选择器的元素
+                has("选择器") 在原先元素中筛选出拥有匹配选择器后代元素的元素
+                
+    </pre>
+    <div id="fa">
+        <p>1</p>
+        <p>2</p>
+        <p>3</p>
+        <p>4</p>
+        <p class="one">5</p>
+        <p>6</p>
+        <p>7
+            <span>我是span</span>
+        </p>
+        <p>8</p>
+        <p>9</p>
+        <p>0</p>
+    </div>
+</body>
+</html>

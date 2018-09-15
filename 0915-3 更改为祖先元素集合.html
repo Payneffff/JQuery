@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>过滤选择器</title>
+    <script src="jquery-1.11.0.min.js"></script>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        p,
+        h1,
+        h2 {
+            margin-top: 10px;
+            text-align: center;
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+            //更改为祖先元素
+            //parent() 方法 选择父元素
+            $("#fa").css("border","1px solid #f80");
+            $(".one").parent().css("background","pink");
+            $(".one").parent("div").css("border","2px solid skyblue");
+
+            //parents() 方法 选择祖先元素
+            // $(".two").parents().css("border","2px solid #08f");//选择所有祖先，直到<HTML>
+            $(".two").parents("div").css("border","2px solid #08f");//选择所有祖先，直到<HTML>
+
+            //parentsUntil() 方法 选择祖先元素，直到找到匹配选择器元素，但不包括匹配元素
+            $(".two").parentsUntil("div").css("border","1px solid #000");//不包括div
+
+            //offsetParent()
+            $(".two").offsetParent("div").css("border","1px solid #000");
+
+            //closest()
+            $(".two").closest("span").css("background","purple");//先找自己，再找祖先
+            $(".two").closest("h1").css("background","skyblue");
+
+        })
+    </script>
+</head>
+<body>
+    <pre>
+            第三章 更改JQuery对象
+
+            1.更改对象操作
+            jq所做的事情就是生成jq对象，操作jq对象，像js一样，如果对象之间存在某种关系我们就可以通过这种关联来改变对象，例如 通过父元素找到子元素
+            2.链式操作设定
+            生成一个jq对象后,既要对它进行一次或多次的普通操作,同时还要对它进行更改操作,于是有必要把生成的jq对象存储在一个变量里,满足多次调用的需要.
+            如果按照这种方式，每进行一次对象生成或更改操作，都需要引入一个变量存储新的jq对象，使高效的程序变得不够简洁，于是jq引入了链式操作，执行普通操作后，会返回对象本身，于是可以持续地对该对象执行下一个操作，直到改变jq对象时，执行一个更改操作。
+        
+    </pre>
+    <pre>
+                更改为祖先元素集合
+                1> parent() 选择父元素
+                   parent("选择器") 选择父元素中，所有匹配选择器的元素
+                   parent() 选择所有父元素
+                2> parents() 选择祖先元素
+                   parents("选择器") 选择祖先元素中，所有匹配选择器的元素
+                   parents() 选择所有祖先元素
+                3> parentsUntil()
+                   parentsUntil("选择器") 选择祖先元素，直到找到匹配选择器的元素，但不包括匹配元素
+                   parentsUntil() 选择所有祖先元素，与parents()功能相同
+                4> offsetParent() 
+                   选择最近的最先定位元素，且该元素的css属性display不能为none,所谓定位元素是指其css属性position取值为relative absolute fixed .如果祖先元素中没有合适的元素，则会选择<body>元素
+                5> closest() 
+                   选择本身或其祖先元素所匹配选择器的元素，也就是说先看该元素本身是否匹配，然后会一层一层向上找到所有匹配的祖先元素
+    </pre>
+    <div id="fa">
+        <p>son1</p>
+        <p class="one">son2</p>
+        <p>son3
+            <span class="one">我是span啊</span>
+        </p>
+        <h1>son4
+            <span class="two">我是span.two啊</span>
+        </h1>
+        <h2>son5</h2>
+    </div>
+</body>
+</html>

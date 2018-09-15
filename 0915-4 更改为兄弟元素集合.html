@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>过滤选择器</title>
+    <script src="jquery-1.11.0.min.js"></script>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        p,
+        h1,
+        h2 {
+            margin-top: 10px;
+            text-align: center;
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+            //更改为兄弟元素集合
+
+            // next()
+            $(".one").next().css("background","#f08");
+            $(".one").next("h1").css("background","#f08");//下一个节点不是h1，设置不生效
+            $(".one").next("span").css("background","#f80");//下一个节点不是span，也不生效
+            //prev()
+            $(".two").next().prev().css("background","#08f");//若next()后无匹配元素，设置不生效
+        })
+    </script>
+</head>
+<body>
+    <pre>
+            第三章 更改JQuery对象
+
+            1.更改对象操作
+            jq所做的事情就是生成jq对象，操作jq对象，像js一样，如果对象之间存在某种关系我们就可以通过这种关联来改变对象，例如 通过父元素找到子元素
+            2.链式操作设定
+            生成一个jq对象后,既要对它进行一次或多次的普通操作,同时还要对它进行更改操作,于是有必要把生成的jq对象存储在一个变量里,满足多次调用的需要.
+            如果按照这种方式，每进行一次对象生成或更改操作，都需要引入一个变量存储新的jq对象，使高效的程序变得不够简洁，于是jq引入了链式操作，执行普通操作后，会返回对象本身，于是可以持续地对该对象执行下一个操作，直到改变jq对象时，执行一个更改操作。
+        
+    </pre>
+    <pre>
+                更改为兄弟元素集合
+                1> next() 和 prev() 方法
+                next("选择器")在原先元素后面的第一个兄弟元素中，选择匹配选择器的元素(仅匹配后面的第一个兄弟)；
+                next()
+                2> nextAll()  prevAll() 和 siblings() 
+                nextAll("选择器") 在原先元素后面的所有兄弟元素中，匹配选择器元素
+                nextAll() 选择原先元素后面的所有兄弟元素
+                prevAll("选择器")
+                prevAll() 选取原先元素前面所有兄弟元素
+                siblings("选择器")
+                siblings() 选取所有兄弟元素
+    </pre>
+    <div id="fa">
+        <p>son1</p>
+        <p class="one">son2</p>
+        <p>son</p>
+        <p>son3
+            <span class="one">我是span啊</span>
+            <i>我是i</i>
+            <span>我是span的兄弟</span>
+        </p>
+        <h1>son4
+            <span class="two">我是span.two啊</span>
+            <span></span>
+        </h1>
+        <h2>son5</h2>
+    </div>
+</body>
+</html>
