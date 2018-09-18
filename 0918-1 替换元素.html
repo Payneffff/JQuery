@@ -29,9 +29,14 @@
     <pre>
         替换元素
 
-        replaceWith() 
+        1.replaceWith() 
             移动页面上原有的元素（创建新的jquery对象）来替换当前选定的元素
+            举例：$("p").replaceWith($(".last"));
+            说明： 删除所有p元素，同时把.last的元素移动到每一个匹配元素的位置。
             
+        2.replaceAll()
+            $("selector1").replaceAll(selector2);
+            删除所有匹配selector2的元素，并将匹配selector1的元素移动到每个匹配selector2的位置。
 
     </pre>
     <div id="nav">
