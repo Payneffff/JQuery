@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>过滤选择器</title>
+    <script src="jquery-1.11.0.min.js"></script>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        span {
+            color: red;
+        }
+        .one {
+            border: 1px solid #f80;
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+            // 1. 创建生成jq对象
+            $("<h1>标题</h1>").appendTo($("div"));
+
+            var i = 1;
+            $("button").click(function(){
+                // $("#con").append("<p>" + i + "</p>");
+                var cc = "<p>"+i+"</p>";
+                $("#con").append(cc);
+                i++;
+            })
+            
+            // 2. 复制生成jQuery对象
+            
+
+        })
+    </script>
+    <script>
+    </script>
+</head>
+<body>
+    <pre>
+        添加元素
+
+        上一节方法不仅能够把页面元素移动到指定位置，还能够把新添加的元素移动到指定位置。添加的新元素需要额外生成。
+
+        1.创建生成jQuery对象
+        例如：$("<p>p1</p>").appendTo($("div"));
+
+        2. 复制生成jQuery对象
+        clone() 生成被选元素的副本，包含子节点 文本 和 属性
+        参数： true 可选。规定是否复制元素的所有事件处理。默认的，副本中不包含事件处理器。
+
+    </pre>
+    <div id="nav">
+        <p>123</p>
+        <div class="one">
+            <p>第一个元素</p>
+        </div>
+        <h3>abc</h3>
+    </div>
+
+
+    <div id="con"></div>
+    <button>按钮</button>
+</body>
+</html>

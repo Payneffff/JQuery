@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>过滤选择器</title>
+    <script src="jquery-1.11.0.min.js"></script>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        span {
+            color: red;
+        }
+        .one {
+            border: 1px solid #f80;
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+                // $("#one").append($("h3"));//此时对象还是#one;
+                $("div").after($("h3"));
+                $("p").insertAfter($("div"));//同上
+        })
+    </script>
+    <script>
+    </script>
+</head>
+<body>
+    <pre>
+        移动元素
+        1.append() 向<span>每个匹配的元素</span>内部末尾追加内容。例如：$("selector").append("selector2");会将匹配选择器2的元素，移动到匹配选择器1的内部尾部。
+        例如： $("div").append($("p")).addClass("highlight");
+        appendTo() : 将所有匹配的元素追加到指定的元素中。
+        appendTo() 和 append() 方法颠倒过来。
+        例如： $("p").appendTo($("div")).addClass("highlight");
+        
+        2.prepend() :向每个匹配的元素内部前置内容。
+        prependTo() 将所有匹配的元素前置到指定的元素中。
+
+        3.after() 在每个匹配的元素之后插入内容。
+        insertAfter() 将所有匹配的元素插入到指定元素的后面
+
+        4.before() 在每个匹配的元素之前插入内容
+        insertBefore() 将所有匹配的元素插入到指定元素的前面
+    </pre>
+    <div id="nav">
+        <p>123</p>
+        <div class="one">
+            <p>第一个元素</p>
+        </div>
+        <h3>abc</h3>
+    </div>
+</body>
+</html>

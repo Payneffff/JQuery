@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>过滤选择器</title>
+    <script src="jquery-1.11.0.min.js"></script>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        .hid {
+            display: none;
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+            $("#nav").find("h3").click(function(){
+                // $(this).next().css("display","block").parent().siblings().children("ul").css("display","none");
+                // $(this).next().show(300).parent().siblings().children("ul").hide(300);//设置动画效果 
+                $(this).next().show().parent().siblings().children("ul").hide();
+            })
+        })
+    </script>
+    <script>
+    </script>
+</head>
+<body>
+    <pre>
+        使用jQuery方式，做下拉列表
+    </pre>
+    <div id="nav">
+        <div>
+            <h3>标题1</h3>
+            <ul class="hid">
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+            </ul>
+        </div>
+        <div>
+            <h3>标题2</h3>
+            <ul class="hid">
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+            </ul>
+        </div>
+        <div>
+            <h3>标题3</h3>
+            <ul class="hid">
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
