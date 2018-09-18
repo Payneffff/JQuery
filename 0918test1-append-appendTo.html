@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>移动元素</title>
+    <link rel="stylesheet" href="reset.css">
+    <script src="jquery-1.11.0.min.js"></script>
+    <script>
+        $(document).ready(function(){
+
+            // $("h1").append($("p"));// 此操作，所有p标记移动到h1标记内部的后面，按照p标记从先到后的顺序排列
+
+            // $("h1").append("p");// 结构中，h1标题下方，添加字符串"p"
+
+            // $("p").appendTo(h1); // 报错
+
+            // $("p").appendTo($("h1"));// 同第一行操作
+
+            // $(".tit").append($("p")); // 每一个.tit标记内部的末尾，都添加所有p标记
+
+            // $("p").appendTo($(".tit")); //效果同上
+
+            // $(".tit").append($(".in")); //仅移动.in到所有.tit内部末尾
+        })
+    </script>
+    <style>
+        h1,
+        h2,
+        h3,
+        div {
+            border: 1px dashed #f80;
+            margin: 10px;
+            text-align: center;
+        }
+        p {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="tit">我是h1标题</h1>
+    <h2 class="tit">我是h2标题</h2>
+    <h3 class="tit">我是h3标题</h3>
+    <p class="out">我是外面的p1</p>
+    <div>
+        <p class="in">我是div里面的p</p>
+    </div>
+    <p class="out">我是外面的p1</p>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>添加元素</title>
+    <link rel="stylesheet" href="reset.css">
+    <script src="jquery-1.11.0.min.js"></script>
+    <script>
+        $(document).ready(function(){
+
+            $("<i>我是新增的i标签</i>").appendTo($(".tit")); //使用移动元素的方法，创建添加新元素
+
+            // 其他方法同样
+
+            var i = 1;
+            $("button").click(function(){
+                // $("#con").append("<p>" + i + "</p>");
+                var cc = "<p>"+i+"</p>";
+                $("#con").append(cc);
+                i++;
+            })
+
+            //拷贝
+            $(".cc").click(function(){
+                // var newh2 = $(".cc").clone(); // 默认情况，clone出来的标签没有绑定点击事件
+                var newh2 = $(".cc").clone(true);  //clone出来的标签，附带点击事件
+                $(".cc").after(newh2);
+            })
+            
+
+        })
+    </script>
+    <style>
+        h1,
+        h2,
+        h3,
+        div {
+            border: 1px dashed #f80;
+            margin: 10px;
+            text-align: center;
+        }
+        p {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="tit">我是h1标题</h1>
+    <h2 class="tit cc">我是h2标题</h2>
+    <h3 class="tit">我是h3标题</h3>
+    <p class="out">我是外面的p1</p>
+    <div>
+        <p class="in">我是div里面的p</p>
+    </div>
+    <p class="out">我是外面的p1</p>
+    <button>你点我啊</button>
+    <p id="con"></p>
+</body>
+</html>

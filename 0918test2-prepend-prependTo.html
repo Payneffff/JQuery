@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>移动元素</title>
+    <link rel="stylesheet" href="reset.css">
+    <script src="jquery-1.11.0.min.js"></script>
+    <script>
+        $(document).ready(function(){
+
+            // $(".tit").prepend($(".in")); // .in 移动到所有.tit 标记内部首部
+
+            // $(".in").prependTo($(".tit")); // 效果同上
+
+
+        })
+    </script>
+    <style>
+        h1,
+        h2,
+        h3,
+        div {
+            border: 1px dashed #f80;
+            margin: 10px;
+            text-align: center;
+        }
+        p {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="tit">我是h1标题</h1>
+    <h2 class="tit">我是h2标题</h2>
+    <h3 class="tit">我是h3标题</h3>
+    <p class="out">我是外面的p1</p>
+    <div>
+        <p class="in">我是div里面的p</p>
+    </div>
+    <p class="out">我是外面的p1</p>
+</body>
+</html>
