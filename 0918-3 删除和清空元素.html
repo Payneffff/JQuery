@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>节点操作</title>
+    <script src="jquery-1.11.0.min.js"></script>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        span {
+            color: red;
+        }
+        .one {
+            border: 1px solid #f80;
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+ 
+            
+
+        })
+    </script>
+    <script>
+    </script>
+</head>
+<body>
+    <pre>
+        删除和清空元素
+
+        1.remove() 
+            删除当前元素，改元素所包含的文本内容和后代元素同时被删除。
+            $("div>p:first").remove(); 删除div的子元素第一个p元素,使用链式操作可以将删除的元素移动到其他位置,原先绑定该元素的事件不会保留。
+
+        2.detach() 
+            删除当前元素，使用链式操作可以将删除的元素移动到其他位置，原先绑定在该元素上的事件会保留。
+
+        3.empty()
+            清空当前元素，该元素的文本内容以及所有的后代元素都会被删除。
+            $("div").empty()
+
+
+    </pre>
+    <div id="nav">
+        <p>123</p>
+        <div class="one">
+            <p>第一个元素</p>
+        </div>
+        <h3>abc</h3>
+    </div>
+
+
+    <div id="con"></div>
+    <button>按钮</button>
+</body>
+</html>

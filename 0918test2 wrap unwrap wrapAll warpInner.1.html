@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>添加元素</title>
+    <link rel="stylesheet" href="reset.css">
+    <script src="jquery-1.11.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            // $("#con").wrap($(".in"));  // 复制.in 包裹 #con
+            // 是复制，不是移动
+            
+            // $(".in").unwrap("div");  // 删除.in 的父元素 div
+            
+            // $(".out").wrapAll($("#con"));  // 所有.out 移动到 第一个.out 后方，复制#con包裹
+
+            // $(".tit").wrapInner($(".out"));
+
+            // $(".tit").wrapInner($("div"));  // 加儿子，原来的儿子变成孙子
+
+            $(".tit").wrap($("div"));  //  加了一个爹
+
+        })
+    </script>
+    <style>
+        h1,
+        h2,
+        h3,
+        div {
+            border: 1px dashed #f80;
+            margin: 10px;
+            text-align: center;
+        }
+
+        p {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="tit">我是h1标题</h1>
+    <h2 class="tit cc">我是h2标题</h2>
+    <h3 class="tit">我是h3标题</h3>
+    <p class="out">我是外面的p1</p>
+    <div>
+        <p class="in">我是div里面的p</p>
+    </div>
+    <p class="out">我是外面的p1</p>
+    <button>你点我啊</button>
+    <p id="con">我是替换元素</p>
+</body>
+
+</html>

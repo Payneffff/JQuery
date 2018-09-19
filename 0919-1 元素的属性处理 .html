@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>属性处理</title>
+    <script src="jquery-1.11.0.min.js"></script>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        span {
+            color: #f08;
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+ 
+            
+
+        })
+    </script>
+    <script>
+    </script>
+</head>
+<body>
+    <pre>
+        元素的属性处理
+
+        <span>//基本属性处理</span>
+        1.attr() 获取元素某个属性值，或者传递一个参数来设置该属性的值
+            $(selector).attr("attr"[,value]);
+            只有一个参数，获取值；
+            两个参数，设置属性值。
+            attr() 设置属性，先清空其他属性值
+
+        2.removeAttr()  删除某个属性  效果同 .attr("attribute","");
+            $("img").removeAttr("title");
+
+        <span>//class属性处理</span>
+
+        3.addClass() 在现有class追加另外的值。
+
+        4.removeClass()  元素移除一个或多个属性值。
+            $(selector).removeClass(value); 会从匹配元素的class属性中移除指定的值。
+
+        5.toggleClass() 切换class属性中的一个或多个属性值的切换。
+            $(selector).toggleClass(value) 会切换所有匹配选择器的class属性值，如果属性值存在，则删除它，如果属性值不存在，则添加它。
+
+        6.hasClass() 判断匹配元素class属性中是否包含某个值，有返回true，没有返回false。
+
+        <span>//元素内部的HTML 文本处理</span>
+        
+        7.html() 获取或设置内部的html代码，包括文本内容以及html标记。  原生js  innerHtml()
+            获取值时，无隐式迭代
+
+        8.text() 可以用来读取或设置某个元素中的文本内容。  原生js innerText()
+            获取值时，隐式迭代
+
+        <span>//表单元素的属性处理</span>
+
+        9.val() 获取或设置匹配选择器的表单元素的value属性值
+            无参数，获取值；有参数，设置值。
+
+            表单选项的checked selected属性。（不常用）
+            使用val()方法，来设置checked 和 selected 的默认值。
+            $("input:checkbox").val(["html"]);
+
+        &lt;select&gt;
+            &lt;option value="01"&gt;1&lt;/option&gt;
+            &lt;option value="02"&gt;2&lt;/option&gt;
+        &lt;/select&gt;
+            $("select").val("02")  把value=“02”的option，设置默认被选中，
+
+    </pre>
+</body>
+</html>

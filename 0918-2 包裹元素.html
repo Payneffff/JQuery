@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>节点操作</title>
+    <script src="jquery-1.11.0.min.js"></script>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        span {
+            color: red;
+        }
+        .one {
+            border: 1px solid #f80;
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+ 
+            
+
+        })
+    </script>
+    <script>
+    </script>
+</head>
+<body>
+    <pre>
+        包裹元素
+            包裹元素，就是给某个节点添加父元素
+
+        1.wrap()
+            <span>复制</span>页面上原有的元素来包裹当前选定的页面元素
+            $("p").wrap($(".last")), 复制.last 包裹 p
+            $("p").wrap("<div>123</div>") 创建新的jq对象，生成标记来包裹p标记
+
+        2.unwrap() 
+            $(selecetor).unwrap()  无参数
+            去除当前元素的父元素。
+
+        3.wrapAll()
+            把所有元素包裹到一起，而不是分别包裹每一个元素。
+
+        4.wrapInner()
+            分别包裹每个元素内部的文本和后代元素，而不是分别包裹每个元素本身。
+
+            
+
+    </pre>
+    <div id="nav">
+        <p>123</p>
+        <div class="one">
+            <p>第一个元素</p>
+        </div>
+        <h3>abc</h3>
+    </div>
+
+
+    <div id="con"></div>
+    <button>按钮</button>
+</body>
+</html>

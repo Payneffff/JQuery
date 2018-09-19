@@ -4,32 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>添加元素</title>
+    <title>移动元素</title>
     <link rel="stylesheet" href="reset.css">
     <script src="jquery-1.11.0.min.js"></script>
     <script>
         $(document).ready(function(){
 
-            $("<i>我是新增的i标签</i>").appendTo($(".tit")); //使用移动元素的方法，创建添加新元素
+            // $("h1").append($("p"));// 此操作，所有p标记移动到h1标记内部的后面，按照p标记从先到后的顺序排列
 
-            // 其他方法同样
+            // $("h1").append("p");// 结构中，h1标题下方，添加字符串"p"
 
-            var i = 1;
-            $("button").click(function(){
-                // $("#con").append("<p>" + i + "</p>");
-                var cc = "<p>"+i+"</p>";
-                $("#con").append(cc);
-                i++;
-            })
+            // $("p").appendTo(h1); // 报错
 
-            //拷贝
-            $(".cc").click(function(){
-                // var newh2 = $(".cc").clone(); // 默认情况，clone出来的标签没有绑定点击事件
-                var newh2 = $(".cc").clone(true);  //clone出来的标签，附带点击事件
-                $(".cc").after(newh2);
-            })
-            
+            // $("p").appendTo($("h1"));// 同第一行操作
 
+            // $(".tit").append($("p")); // 每一个.tit标记内部的末尾，都添加所有p标记
+
+            // $("p").appendTo($(".tit")); //效果同上
+
+            // $(".tit").append($(".in")); //仅移动.in到所有.tit内部末尾
         })
     </script>
     <style>
@@ -48,14 +41,12 @@
 </head>
 <body>
     <h1 class="tit">我是h1标题</h1>
-    <h2 class="tit cc">我是h2标题</h2>
+    <h2 class="tit">我是h2标题</h2>
     <h3 class="tit">我是h3标题</h3>
     <p class="out">我是外面的p1</p>
     <div>
         <p class="in">我是div里面的p</p>
     </div>
     <p class="out">我是外面的p1</p>
-    <button>你点我啊</button>
-    <p id="con"></p>
 </body>
 </html>
