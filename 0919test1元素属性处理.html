@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>属性相关</title>
+    <link rel="stylesheet" href="reset.css">
+    <script src="jquery-1.11.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+
+        // 基本属性处理
+
+            $("ul").attr("id","con2");  // 修改/设置ul的id属性
+
+            $("ul").removeAttr("id");  // 删除ul的id属性
+
+            var ulId = $("ul").attr("id"); //  获取ul的id属性值
+            
+            console.log(ulId);
+        
+        // 类名处理
+            
+            $("li:nth-child(1)").addClass("bd");
+
+
+            $("ul").children().eq(0).removeAttr("class");
+
+            $("li:first-child").addClass("bd","cc"); //此设置不生效
+
+            $("li:first-child").addClass("bd cc");  // 添加多个类名，中间用空格隔开
+
+            $(".cc").removeClass("cc");
+
+            $(".two").click(function(){
+                $(this).toggleClass("bd");
+                $(this).siblings().removeClass("cc");
+                if($(this).hasClass("bd")){
+                    $(this).siblings().addClass("cc");
+                }
+            })
+
+            var textAll = $("li").text();
+            var htmlAll = $("li").html();
+            console.log(textAll + '\n' + htmlAll);
+
+            $("button").click(function(){
+                var f = $(this).prev().val();  // 获取表单value属性
+                console.log(f)
+                $(this).prev().val("123"); // 设置表单value属性
+            })
+
+ 
+        })
+    </script>
+    <style>
+        h1,
+        h2,
+        h3,
+        div,
+        li,
+        input {
+            border: 1px dashed #f80;
+            margin: 10px;
+            text-align: center;
+        }
+
+        p {
+            text-align: center;
+        }
+        .bd {
+            border: 4px double #f08;
+        }
+        .cc {
+            color: #0f8;
+        }
+    </style>
+</head>
+
+<body>
+    <ul id="con">
+        <li>1</li>
+        <li class="two">2 点我会加边框</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    <form action="javascript:;">
+        <input type="text" value="0"><button>获取表单内容</button><p></p>
+    </form>
+</body>
+
+</html>
