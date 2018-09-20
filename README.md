@@ -1,3 +1,3 @@
 # JQuery笔记
-Hencky
-注册Github帐号，follow me
+test文件，为对应日期的练习笔记。
+方便理解内容。
