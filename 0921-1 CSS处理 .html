@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS处理</title>
+    <script src="jquery-1.11.0.min.js"></script>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        span {
+            color: #f08;
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+ 
+            
+
+        })
+    </script>
+    <script>
+    </script>
+</head>
+<body>
+    <pre>
+            CSS基本属性处理
+
+            1.css() 获取css属性值。
+            $(selector).css(name); 获取匹配选择器的元素指定css属性的值。
+            
+            可以一次性设置多个属性值。
+
+            $(selector).css({"properties":"value1","properties":"value2"});
+
+
+            2.CSS尺寸的属性处理
+
+                1) height() 和 width() 获取或设置css属性 height() width() 单位是像素。
+                设置和获取 content 的 widht 和 height
+                说明：需要注意的是，height() 和 width() 方法获取的都是元素在页面中的实际高度值和宽度值，与设置的不一定相同。
+                $("div").width();  获取第一个div的width; 获取值无单位。
+                $("div").width(30);  设置所有的div的width为30px;
+                $("div").width("70%");  设置所有div的width为父元素的70%;
+
+                2) innerHegith()  innerWidth()
+                获得或设置元素的实际高度和宽度值(content+padding))。<span>不包含border和margin</span>
+                一般只用来获取。
+                设置宽度和高度时，修改content的宽高;
+
+                3) outerHeight() outerWidth()
+                获取或设置元素的实际高度和宽度值。
+                一般只用来获取。
+                参数<span>true</span> 获取宽高包含 margin
+                $("div").outerHeight(true)
+
+    </pre>
+</body>
+</html>
