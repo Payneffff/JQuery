@@ -54,6 +54,22 @@
                 参数<span>true</span> 获取宽高包含 margin
                 $("div").outerHeight(true)
 
+            3.css位置属性处理  默认单位px
+
+                1) offset() 获取或设置当前元素的相对窗口偏移量
+                $("p").offset().top; // 获得第一个p距离窗口坐上的偏移距离。
+                $("p").offset().left; // 获得第一个p距离窗口左边的偏移距离。
+                $(selector).offset(); [object object] 需要top left属性来获取值。
+                $(selector).offset({"top":100,"left":100});  设置偏移量。
+
+                2) position() 获取当前元素相对最近的定位元素的偏移量
+                $("p").pisition().top; // 获得第一个p距离父元素上边的偏移距离。
+                $("p").posiiton().left; // 获得第一个p距父元素左边的偏移距离。
+
+                3) scrollTop()  scrollLeft()  获取或设置滚动条的位置
+                $("div:eq(1)").scrollTop(); // 获得滚动条的垂直距离
+                $("div:eq(1)").scrollLeft(); // 获得滚动条的水平距离
+
     </pre>
 </body>
 </html>
